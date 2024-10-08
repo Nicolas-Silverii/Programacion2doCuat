@@ -1,8 +1,8 @@
 export class Vehiculo {
-    private marca: string;
-    private modelo: string;
-    private anio: number;
-    private patente: string;
+    protected marca: string;
+    protected modelo: string;
+    protected anio: number;
+    protected patente: string;
 
     constructor(marca: string, modelo: string, anio: number, patente: string) {
         this.marca = marca;

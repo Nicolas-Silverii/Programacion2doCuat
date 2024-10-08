@@ -3,25 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegistroAutomotor = void 0;
 var RegistroAutomotor = /** @class */ (function () {
     function RegistroAutomotor(nombre) {
-        this.nombre = nombre;
         this.listaMoto = [];
         this.listaAuto = [];
         this.listaCamion = [];
+        this.nombre = nombre;
     }
-    // Getters
-    RegistroAutomotor.prototype.getNombre = function () {
-        return this.nombre;
-    };
-    RegistroAutomotor.prototype.getAuto = function () {
-        return this.listaAuto;
-    };
-    RegistroAutomotor.prototype.getMoto = function () {
-        return this.listaMoto;
-    };
-    RegistroAutomotor.prototype.getCamion = function () {
-        return this.listaCamion;
-    };
-    // Métodos para agregar vehículos
     RegistroAutomotor.prototype.agregarAuto = function (auto) {
         this.listaAuto.push(auto);
     };
@@ -31,7 +17,6 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.agregarCamion = function (camion) {
         this.listaCamion.push(camion);
     };
-    // Métodos para borrar vehículos
     RegistroAutomotor.prototype.borrarAuto = function (index) {
         this.listaAuto.splice(index, 1);
     };
@@ -41,7 +26,6 @@ var RegistroAutomotor = /** @class */ (function () {
     RegistroAutomotor.prototype.borrarCamion = function (index) {
         this.listaCamion.splice(index, 1);
     };
-    // Métodos para modificar vehículos
     RegistroAutomotor.prototype.modificarAuto = function (index, auto) {
         this.listaAuto[index] = auto;
     };
@@ -50,6 +34,15 @@ var RegistroAutomotor = /** @class */ (function () {
     };
     RegistroAutomotor.prototype.modificarCamion = function (index, camion) {
         this.listaCamion[index] = camion;
+    };
+    RegistroAutomotor.prototype.getAutos = function () {
+        return this.listaAuto;
+    };
+    RegistroAutomotor.prototype.getMotos = function () {
+        return this.listaMoto;
+    };
+    RegistroAutomotor.prototype.getCamiones = function () {
+        return this.listaCamion;
     };
     return RegistroAutomotor;
 }());

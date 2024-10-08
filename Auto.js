@@ -1,27 +1,32 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Auto = void 0;
 var vehiculo_1 = require("./vehiculo");
-var Auto = /** @class */ (function () {
+var Auto = /** @class */ (function (_super) {
+    __extends(Auto, _super);
     function Auto(marca, modelo, anio, cantidadPuertas, patente) {
-        this.vehiculo = new vehiculo_1.Vehiculo(marca, modelo, anio, patente);
-        this.cantidadPuertas = cantidadPuertas;
+        var _this = _super.call(this, marca, modelo, anio, patente) || this;
+        _this.cantidadPuertas = cantidadPuertas;
+        return _this;
     }
     Auto.prototype.getCantidadPuertas = function () {
         return this.cantidadPuertas;
     };
-    Auto.prototype.getMarca = function () {
-        return this.vehiculo.getMarca();
-    };
-    Auto.prototype.getModelo = function () {
-        return this.vehiculo.getModelo();
-    };
-    Auto.prototype.getAnio = function () {
-        return this.vehiculo.getAnio();
-    };
-    Auto.prototype.getPatente = function () {
-        return this.vehiculo.getPatente();
-    };
     return Auto;
-}());
+}(vehiculo_1.Vehiculo));
 exports.Auto = Auto;

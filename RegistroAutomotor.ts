@@ -1,38 +1,17 @@
-import { Moto } from "./Moto";
-import { Auto } from "./auto";
-import { Camion } from "./Camion";
+import { Auto } from './auto';
+import { Moto } from './moto';
+import { Camion } from './camion';
 
 export class RegistroAutomotor {
     private nombre: string;
-    private listaMoto: Moto[];
-    private listaAuto: Auto[];
-    private listaCamion: Camion[];
+    private listaMoto: Moto[] = [];
+    private listaAuto: Auto[] = [];
+    private listaCamion: Camion[] = [];
 
     constructor(nombre: string) {
         this.nombre = nombre;
-        this.listaMoto = [];
-        this.listaAuto = [];
-        this.listaCamion = [];
     }
 
-    // Getters
-    public getNombre(): string {
-        return this.nombre;
-    }
-
-    public getAuto(): Auto[] {
-        return this.listaAuto;
-    }
-
-    public getMoto(): Moto[] {
-        return this.listaMoto;
-    }
-
-    public getCamion(): Camion[] {
-        return this.listaCamion;
-    }
-
-    // Métodos para agregar vehículos
     public agregarAuto(auto: Auto): void {
         this.listaAuto.push(auto);
     }
@@ -45,24 +24,18 @@ export class RegistroAutomotor {
         this.listaCamion.push(camion);
     }
 
-    // Métodos para borrar vehículos
-
-
     public borrarAuto(index: number): void {
         this.listaAuto.splice(index, 1);
     }
 
     public borrarMoto(index: number): void {
-        this.listaMoto.splice(index, 1); 
+        this.listaMoto.splice(index, 1);
     }
 
     public borrarCamion(index: number): void {
-        this.listaCamion.splice(index, 1); 
+        this.listaCamion.splice(index, 1);
     }
 
-    // Métodos para modificar vehículos
-
-    
     public modificarAuto(index: number, auto: Auto): void {
         this.listaAuto[index] = auto;
     }
@@ -73,5 +46,17 @@ export class RegistroAutomotor {
 
     public modificarCamion(index: number, camion: Camion): void {
         this.listaCamion[index] = camion;
+    }
+
+    public getAutos(): Auto[] {
+        return this.listaAuto;
+    }
+
+    public getMotos(): Moto[] {
+        return this.listaMoto;
+    }
+
+    public getCamiones(): Camion[] {
+        return this.listaCamion;
     }
 }
